@@ -4,12 +4,12 @@ A responsive, single-page portfolio built with HTML and CSS. It introduces my le
 
 ## About
 
-I'm a student developer learning software development through hands-on practice, community projects, and open-source collaboration. My learning journey includes attending OSC 4.0 at the Indian Institute of Information Technology Allahabad (IIIT Allahabad) and a Generative AI and Agentic AI workshop at IIT Kanpur on 10–11 October 2026, organized by UDGOSH. The workshop explored building AI agents with both coding and no-code approaches. This portfolio is a work in progress and will grow as I complete more projects.
+I'm a student developer learning software development through hands-on practice, community projects, and open-source collaboration. My learning journey includes attending the Open Source Opportunity Conference (OOSC 4.0) at the Indian Institute of Information Technology Allahabad (IIIT Allahabad) and a Generative AI and Agentic AI workshop at IIT Kanpur on 10–11 October 2026, organized by UDGOSH. The workshop explored building AI agents with both coding and no-code approaches. This portfolio is a work in progress and will grow as I complete more projects.
 
 ## Sections
 
 - About me and community development
-- Learning journey: OSC 4.0 at IIIT Allahabad and the Generative AI and Agentic AI workshop at IIT Kanpur
+- Learning journey: Open Source Opportunity Conference (OOSC 4.0) at IIIT Allahabad and the Generative AI and Agentic AI workshop at IIT Kanpur
 - Skills I'm developing
 - Projects and contributions
 - Contact through GitHub
