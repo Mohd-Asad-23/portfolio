@@ -1,298 +1,199 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asad Developer Portfolio</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        background-color: rgb(0, 0, 33);
-        color: white;
-      }
-      nav {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 60px;
-        background-color: rgb(18, 18, 62);
-      }
-      nav ul {
-        display: flex;
-        justify-content: center;
-      }
-      nav ul li {
-        list-style: none;
-        margin: 0 23px;
-      }
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-      }
-      nav ul li a:hover {
-        color: rgb(153, 153, 226);
-        font-size: 1.01rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Asad's student developer portfolio, projects, and learning journey.">
+  <title>Asad | Student Developer Portfolio</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b1a;
+      --surface: #11172b;
+      --surface-light: #171f39;
+      --text: #f4f6ff;
+      --muted: #b4bdd4;
+      --accent: #a78bfa;
+      --accent-strong: #c4b5fd;
+      --border: rgba(196, 181, 253, .2);
+      --max-width: 1080px;
+    }
 
-      main hr {
-        border: 0;
-        background: #9c97f1;
-        height: 1.2px;
-        margin: 60px 84px;
-      }
-      .left {
-        font-size: 1.6rem;
-      }
-      .firstSection {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 130px 0;
-      }
-      .firstSection>div {
-        width: 30%;
-      }
-      .leftSection {
-        font-size: 2.76rem;
-      }
-      .leftSection .buttons{
-        padding: 50px 0;
-      }
-      .leftSection .btn {
-        padding: 12px;
-        background: #1e2167;
-        color:white;
-        border: 2px solid white;
-        border-radius: 6px;
-        font-size: 20px;
-        cursor: pointer;
-       }
-      .rightSection img {
-        width: 80%;
-      }
-      .purple {
-        color: rgb(170, 107, 228);
-      }
-      .text-gray {
-        color: gray;
-      }
-      #element {
-        color: rgb(170, 107, 228);
-      }
-      .secondSection {
-        max-width: 80vw;
-        margin: auto;
-        height: 80vh;
-      }
-      .secondSection h1 {
-        font-size: 1.9rem;
-      }
-      .secondSection .box {
-        background: white;
-        width: 90vw;
-        height: 2px;
-        margin: 56px 0;
-        display: flex;
-      }
-      .secondSection .vertical {
-        height: 93px;
-        width: 1px;
-        background-color: white;
-        margin: 0 100px;
-      }
-      .image-top {
-        width: 30px;
-        position: relative;
-        top: -32px;
-        left: -9px;
-      }
-      .vertical-title {
-        position: relative;
-        top: 75px;
-        width: 150px;
-        font-size: 14px;
-      }
-      .vertical-desc {
-        position: relative;
-        top: 86px;
-        color: gray;
-        width: 150px;
-        font-size: 9px;
-      }
-      footer{
-        background-color: #0e0e1a;
-      }
-      .footer{
-        display: flex;
-        padding: 23px 122px;
-        justify-content: space-evenly;
-      }
-      .footer ul{
-        list-style: none;
-      }
-      .footer > div{
-        width: 223px;
-      }
-      footer .footer-rights{
-        text-align: center;
-        color: gray;
-        padding: 12px 0;
-      }
-    </style>
-  </head>
-  
-  <body>
-      <header>
-      <nav>
-        <div class="left">Asad's Portfolio</div>
-        <div class="right"></div>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/">About</a></li>
-          <li><a href="/">Services</a></li>
-          <li><a href="/">Projects</a></li>
-          <li><a href="/">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="firstSection">
-        <div class="leftSection">
-          Hi, My name is <span class="purple">Asad</span>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 5%, rgba(96, 80, 180, .18), transparent 32rem),
+        radial-gradient(circle at 92% 35%, rgba(48, 110, 160, .14), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--accent-strong); text-underline-offset: 4px; }
+    a:hover { color: white; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 4px; }
+    .container { width: min(var(--max-width), calc(100% - 40px)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(8, 11, 26, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .brand { color: var(--text); font-weight: 750; font-size: 1.05rem; text-decoration: none; letter-spacing: -.02em; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; list-style: none; padding: 0; margin: 0; }
+    .nav-links a { color: var(--muted); font-size: .93rem; text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+    .hero { padding: clamp(76px, 12vw, 136px) 0 90px; }
+    .eyebrow { color: var(--accent-strong); font-size: .85rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin: 16px 0; font-size: clamp(2.6rem, 7vw, 5.3rem); line-height: 1.08; letter-spacing: -.055em; }
+    .gradient-text { color: var(--accent-strong); }
+    .hero-copy { max-width: 670px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.2rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 46px; padding: 10px 18px; border: 1px solid var(--border);
+      border-radius: 10px; text-decoration: none; font-weight: 650;
+    }
+    .button-primary { background: var(--accent); color: #17112b; border-color: var(--accent); }
+    .button-primary:hover { background: var(--accent-strong); color: #17112b; }
+    .button-secondary { color: var(--text); background: rgba(255,255,255,.025); }
+    section.content-section { padding: 66px 0; border-top: 1px solid var(--border); }
+    .section-heading { margin-bottom: 26px; }
+    .section-heading h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; letter-spacing: -.035em; margin-bottom: 8px; }
+    .section-heading p { max-width: 680px; color: var(--muted); margin-bottom: 0; }
+    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card {
+      padding: 24px; border: 1px solid var(--border); border-radius: 16px;
+      background: linear-gradient(145deg, rgba(23,31,57,.88), rgba(17,23,43,.88));
+    }
+    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); margin-bottom: 14px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: 18px 0 0; }
+    .tag-list li { padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: .88rem; }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .skill { padding: 15px 17px; border-radius: 12px; border: 1px solid var(--border); background: rgba(17,23,43,.72); }
+    .skill strong { display: block; font-size: .98rem; }
+    .skill span { color: var(--muted); font-size: .88rem; }
+    .contact-panel { padding: clamp(24px, 5vw, 42px); border: 1px solid var(--border); border-radius: 18px; background: var(--surface); }
+    .contact-panel p { color: var(--muted); max-width: 650px; }
+    footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: .9rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 700px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 15px 0; gap: 10px; }
+      .nav-links { gap: 12px 18px; }
+      .hero { padding-top: 72px; }
+      .card-grid, .skill-grid { grid-template-columns: 1fr; }
+      section.content-section { padding: 50px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">Asad's Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-          <div>and I am a passionate</div>
-          <span id="element"></span>
-          <div class="buttons">
-            <button class="btn">Download Resume</button>
-            <button class="btn">Visit Github Profile</button>
-          </div>
-        </div>
-        <div class="rightSection">
-          <img src="bg.png" alt="" />
-        </div>
-      </section>
-      <hr />
-      <section class="secondSection">
-        <span class="text-gray">What I have done so far</span>
-        <h1>Work Experience</h1>
-
-        <div class="box">
-          <div class="vertical">
-            <img class="image-top" src="html.png" alt="" />
-            <div class="vertical-title">
-              HTML Developer (2025-2026)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              architecto corrupti recusandae voluptates perspiciatis quibusdam
-              ea veniam illum cum aperiam? Labore, animi obcaecati.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="node.js.png" alt="" />
-            <div class="vertical-title">
-              Node.js Developer (2025-2026)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              architecto corrupti recusandae voluptates perspiciatis quibusdam
-              ea veniam illum cum aperiam? Labore, animi obcaecati.
-            </div>
-          </div>
-          
-          <div class="vertical">
-            <img class="image-top" src="React.png" alt="" />
-            <div class="vertical-title">
-            React Developer (2025-2026)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              architecto corrupti recusandae voluptates perspiciatis quibusdam
-              ea veniam illum cum aperiam? Labore, animi obcaecati.
-          </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="mongodb.png" alt="" />
-            <div class="vertical-title">
-              MongoDB Developer (2025-2026)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              architecto corrupti recusandae voluptates perspiciatis quibusdam
-              ea veniam illum cum aperiam? Labore, animi obcaecati.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="cloud.png" alt="" />
-            <div class="vertical-title">
-              Cloud Developer (2025-2026)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              architecto corrupti recusandae voluptates perspiciatis quibusdam
-              ea veniam illum cum aperiam? Labore, animi obcaecati.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="vercel.png" alt="" />
-            <div class="vertical-title">
-              Vercel Developer (2025-2026)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-              architecto corrupti recusandae voluptates perspiciatis quibusdam
-              ea veniam illum cum aperiam? Labore, animi obcaecati.
-            </div>
-          </div>
-          
-      </section>
-    </main>
-     
-    <footer>
-      <div class="footer">
-        <div class="footer-first">
-             <h3>Asad's Developer Portfolio</h3>
-        </div>
-        <div class="footer-second">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div class="footer-third">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div class="footer-fourth">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-       </div>
-      <div class="footer-rights">
-          Copyright &#169 www.asadsportfolio.com | All rights reserved
+  <main id="home">
+    <section class="hero container">
+      <p class="eyebrow">Student developer · Learning in public</p>
+      <h1>Hi, I'm Asad.<br><span class="gradient-text">I learn by building.</span></h1>
+      <p class="hero-copy">I'm developing my software skills through hands-on projects, collaborative work, and open-source learning. I'm especially interested in writing better code and understanding how real projects are built and maintained.</p>
+      <div class="actions">
+        <a class="button button-primary" href="#projects">Explore my projects</a>
+        <a class="button button-secondary" href="https://github.com/Mohd-Asad-23" target="_blank" rel="noopener noreferrer">Visit my GitHub</a>
       </div>
-    </footer>
+    </section>
 
-    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <section class="content-section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About me</h2>
+          <p>I'm a student developer building a strong foundation in programming and collaborative software development. I value consistent practice, useful feedback, and learning by contributing to real projects.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Community development</h3>
+            <p>I'm involved with the WikiClub Tech UU website and learning how teams use Git, branches, and pull requests to work together safely.</p>
+          </article>
+          <article class="card">
+            <h3>Exploring AI</h3>
+            <p>I attended a Generative AI and Agentic AI workshop at IIT Kanpur, where I explored building agents using both coding and no-code approaches.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <script>
-      var typed = new Typed("#element", {
-        strings: [
-          "Full Stack Developer",
-          "Web Developer",
-          "DevOps Engineer",
-          "Open Source Contributor",
-        ],
-        typeSpeed: 50,
-      });
-     </script>
-  </body>
-  
+    <section class="content-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Skills I'm developing</h2>
+          <p>This list reflects my current learning journey, not a claim of professional-level expertise.</p>
+        </div>
+        <div class="skill-grid">
+          <div class="skill"><strong>Python</strong><span>Programming fundamentals and problem solving</span></div>
+          <div class="skill"><strong>C</strong><span>Core programming and data structures</span></div>
+          <div class="skill"><strong>Java</strong><span>Syntax, loops, and object-oriented basics</span></div>
+          <div class="skill"><strong>SQL</strong><span>Tables, queries, and database practice</span></div>
+          <div class="skill"><strong>HTML and CSS</strong><span>Building and styling web pages</span></div>
+          <div class="skill"><strong>Git and GitHub</strong><span>Branches, commits, and collaboration</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Projects and contributions</h2>
+          <p>A few places where I'm practicing, building, and learning with others.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>WikiClub Tech UU</h3>
+            <p>A student community website. I'm working on program-page improvements and learning a branch-based workflow that keeps proposed changes separate from the main branch.</p>
+            <a href="https://github.com/Mohd-Asad-23/WikiClub-Tech-UU" target="_blank" rel="noopener noreferrer">View repository</a>
+          </article>
+          <article class="card">
+            <h3>Personal portfolio</h3>
+            <p>This static website introduces my learning journey and provides a place to collect my projects as they develop.</p>
+            <a href="https://github.com/Mohd-Asad-23/portfolio" target="_blank" rel="noopener noreferrer">View source code</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <h2>Let's connect</h2>
+          <p>I'm interested in learning from other developers, contributing to beginner-friendly open-source issues, and improving through constructive feedback.</p>
+          <a class="button button-primary" href="https://github.com/Mohd-Asad-23" target="_blank" rel="noopener noreferrer">Find me on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Asad's Portfolio</span>
+      <span>Built with HTML and CSS. Updated as I learn.</span>
+    </div>
+  </footer>
+</body>
 </html>
